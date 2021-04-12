@@ -1,4 +1,4 @@
-const basicApi = "http://localhost:4000/";
+const basicApi = "http://localhost:8080/";
 
 async function callMyServer() {
 	try {
