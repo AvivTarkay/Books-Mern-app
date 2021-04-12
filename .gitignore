@@ -27,5 +27,5 @@ yarn-error.log*
 .idea
 
 # visual studios configurations
-.vs
+.vscode
 
