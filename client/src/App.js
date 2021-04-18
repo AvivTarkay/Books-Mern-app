@@ -18,5 +18,15 @@ function App() {
 		</div>
 	);
 }
+export function getAverage(...numbers) {
+	// const numContainer = [...numbers];
+	let sum = numbers.reduce((total, num) => {
+		return total + num;
+	});
+	let avg = sum / numbers.length;
 
+	return avg;
+}
+let test = getAverage(4, 5, 6, 7, 8, 9);
+console.log(test);
 export default App;
