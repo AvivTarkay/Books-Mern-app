@@ -4,7 +4,7 @@ dotenv.config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const morgan = require("morgan");
+// const morgan = require("morgan");
 const app = express();
 
 //*import the connection:
@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use(cors());
-app.use(morgan("dev"));
+// app.use(morgan("dev"));
 dbConnection.on("error", () => {
 	console.log("dbConnection error");
 });
