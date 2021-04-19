@@ -3,7 +3,7 @@ import MUIDataTable from "mui-datatables";
 
 const Table = props => {
 	const { booksInfo } = props;
-	console.log("Table => booksInfo", booksInfo);
+
 	const columns = [
 		{
 			name: "name",
@@ -43,7 +43,6 @@ const Table = props => {
 	};
 
 	const data = TableData(booksInfo);
-	console.log("data => data", data);
 
 	const options = {
 		filterType: "checkbox",

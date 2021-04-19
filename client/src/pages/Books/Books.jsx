@@ -10,19 +10,14 @@ const Books = () => {
 	const [numberOfPages, setNumberOfPages] = useState(0);
 
 	useEffect(() => {
-		function getBooks() {
+		const getBooks = () => {
 			getAllBooks().then(res => {
 				setBooksItems(res);
 			});
-		}
+		};
 		getBooks();
-	}, []);
+	}, [booksItems]);
 
-	// function getBooks() {
-	// 	getAllBooks().then(res => {
-	// 		setBooksItems(res);
-	// 	});
-	// }
 	function changeNameInput(e) {
 		setName(e.target.value);
 	}
