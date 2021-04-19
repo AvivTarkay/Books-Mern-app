@@ -38,7 +38,7 @@ const Table = props => {
 				id: book._id,
 			});
 		});
-		console.log("TableData => books", books);
+
 		return booksArray;
 	};
 

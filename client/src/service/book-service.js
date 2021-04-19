@@ -1,7 +1,7 @@
 const PORT = process.env.PORT || 8080;
 const basicApi =
 	process.env.NODE_ENV === "production"
-		? `https://books-mern-app2.herokuapp.com/`
+		? `https://books-mern-app-finall.herokuapp.com/`
 		: `http://localhost:8080/`;
 
 async function callMyServer() {
