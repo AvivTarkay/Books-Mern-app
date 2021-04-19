@@ -9,27 +9,34 @@ const Books = () => {
 	const [name, setName] = useState("");
 	const [numberOfPages, setNumberOfPages] = useState(0);
 
-	useEffect(getBooks, [booksItems]);
+	useEffect(() => {
+		function getBooks() {
+			getAllBooks().then(res => {
+				setBooksItems(res);
+			});
+		}
+		getBooks();
+	}, []);
 
-	function getBooks() {
-		getAllBooks().then(res => {
-			console.log("getBooks -> getAllBooks: ", res);
-			setBooksItems(res);
-		});
-	}
-	function changeNameInput(event) {
-		setName(event.target.value);
+	// function getBooks() {
+	// 	getAllBooks().then(res => {
+	// 		setBooksItems(res);
+	// 	});
+	// }
+	function changeNameInput(e) {
+		setName(e.target.value);
 	}
 	function changeNumberInput(event) {
 		setNumberOfPages(event.target.value);
 	}
-	function saveNewBook(event) {
-		event.preventDefault();
+	function saveNewBook(e) {
+		e.preventDefault();
 		const bookItem = { name, numberOfPages };
 		postBook(bookItem).then(res => {
 			alert(res.success);
 		});
 	}
+
 	return (
 		<div>
 			<h1> Books Component</h1>
@@ -38,7 +45,7 @@ const Books = () => {
 				changeNameInput={changeNameInput}
 				changeNumberInput={changeNumberInput}
 			/>
-			<Table booksItems={booksItems} />
+			<Table booksInfo={booksItems} />
 		</div>
 	);
 };

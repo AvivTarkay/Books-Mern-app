@@ -28,5 +28,5 @@ export function getAverage(...numbers) {
 	return avg;
 }
 let test = getAverage(4, 5, 6, 7, 8, 9);
-console.log(test);
+
 export default App;

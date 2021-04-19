@@ -2,8 +2,8 @@ import React from "react";
 import MUIDataTable from "mui-datatables";
 
 const Table = props => {
-	const { booksItems } = props;
-
+	const { booksInfo } = props;
+	console.log("Table => booksInfo", booksInfo);
 	const columns = [
 		{
 			name: "name",
@@ -27,9 +27,9 @@ const Table = props => {
 		},
 	];
 
-	const tableData = books => {
+	const TableData = books => {
 		let booksArray = [];
-		books.map(book => {
+		books.forEach(book => {
 			booksArray.push({
 				createdAt: book.createdAt,
 				name: book.name,
@@ -38,11 +38,12 @@ const Table = props => {
 				id: book._id,
 			});
 		});
+		console.log("TableData => books", books);
 		return booksArray;
 	};
 
-	const data = tableData(booksItems);
-	console.log("data => data", columns);
+	const data = TableData(booksInfo);
+	console.log("data => data", data);
 
 	const options = {
 		filterType: "checkbox",

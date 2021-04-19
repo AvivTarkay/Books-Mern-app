@@ -21,7 +21,6 @@ async function getAllBooks() {
 	try {
 		return await fetch(`${basicApi}books`)
 			.then(res => {
-				console.log("getAllBooks => res:", res);
 				return res.json();
 			})
 			.then(result => {
