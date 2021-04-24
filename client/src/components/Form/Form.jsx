@@ -1,7 +1,14 @@
 import React from "react";
 
 const Form = props => {
-	const { saveNewBook, changeNameInput, changeNumberInput } = props;
+	const {
+		saveNewBook,
+		changeNameInput,
+		changeNumberInput,
+		RemoveFromTable,
+		updateBookTable,
+	} = props;
+
 	return (
 		<div>
 			<form onSubmit={saveNewBook}>
@@ -14,6 +21,12 @@ const Form = props => {
 					name="numberOfPages"
 				/>
 				<button type="submit">Save book</button>
+				<button type="button" onClick={RemoveFromTable}>
+					Delete book
+				</button>
+				<button type="button" onClick={updateBookTable}>
+					Update book
+				</button>
 			</form>
 		</div>
 	);

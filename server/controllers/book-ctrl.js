@@ -31,7 +31,6 @@ async function getAllBooks(req, res) {
 		if (!results.length) {
 			res.status(404).json({ success: false, message: "No books found" });
 		}
-		console.log("results:", JSON.stringify(results));
 		res.status(200).json({ success: true, data: results });
 	});
 }
